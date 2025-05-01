@@ -47,7 +47,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Migrations
                         column: x => x.OwnerId,
                         principalTable: "Owner",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);//Quit cascade tht made the update database fail
                 });
 
             migrationBuilder.CreateTable(
@@ -71,13 +71,13 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Migrations
                         column: x => x.OwnerId,
                         principalTable: "Owner",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_VeterinaryAppointment_Pet_PetId",
                         column: x => x.PetId,
                         principalTable: "Pet",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateIndex(
