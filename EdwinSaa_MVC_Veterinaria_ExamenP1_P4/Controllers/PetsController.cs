@@ -47,7 +47,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Controllers
         // GET: Pets/Create
         public IActionResult Create()
         {
-            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Id");
+            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Name");
             return View();
         }
 
@@ -64,7 +64,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Id", pet.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Name", pet.OwnerId);
             return View(pet);
         }
 
@@ -81,7 +81,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Controllers
             {
                 return NotFound();
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Id", pet.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Name", pet.OwnerId);
             return View(pet);
         }
 
@@ -117,7 +117,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Id", pet.OwnerId);
+            ViewData["OwnerId"] = new SelectList(_context.Owner, "Id", "Name", pet.OwnerId);
             return View(pet);
         }
 

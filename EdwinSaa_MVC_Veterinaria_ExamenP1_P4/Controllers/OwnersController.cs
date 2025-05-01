@@ -45,6 +45,7 @@ namespace EdwinSaa_MVC_Veterinaria_ExamenP1_P4.Controllers
         // GET: Owners/Create
         public IActionResult Create()
         {
+            ViewData["PetId"] = new SelectList(_context.Pet, "Id", "Name");
             return View();
         }
 
